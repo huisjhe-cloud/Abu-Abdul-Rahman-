@@ -1,914 +1,140 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl" class="scroll-smooth">
+</html><!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الورشة - للعدد والأدوات الصناعية</title>
-    <!-- تحميل خط Cairo العربي العصري -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- تحميل مكتبة Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- تحميل أيقونات Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        cairo: ['Cairo', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            dark: '#0f172a',
-                            charcoal: '#1e293b',
-                            amber: '#f59e0b',
-                            yellow: '#fbbf24',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ادفع عبر فودافون كاش أو أورنج كاش — محل أبو عبد الرحمن</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b1118;--grid:#ffffff0d;--card:#121b25;--line:#243342;--ink:#eef3f8;--mute:#8fa1b2;--vf:#e60000;--or:#ff7900;--ok:#3ccf95;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#eef1f4;--grid:#14202b0d;--card:#fff;--line:#d9e0e6;--ink:#14202b;--mute:#5d6b78;--ok:#0f8a5f}}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font-family:"Cairo","Tajawal",system-ui,sans-serif;line-height:1.6;
+background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px}
+.wrap{max-width:880px;margin:0 auto;padding:28px 16px 40px}
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--mute);border:1px solid var(--line);border-radius:99px;padding:4px 12px;background:var(--card)}
+.tag i{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 0 var(--ok);animation:p 2s infinite}
+@keyframes p{70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+h1{font-size:clamp(28px,6vw,44px);font-weight:800;line-height:1.2;margin:14px 0 6px}
+h1 span{background:linear-gradient(90deg,var(--vf),var(--or));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mute);margin:0 0 26px;font-size:16px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:640px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;opacity:0;transform:translateY(16px);animation:in .6s .1s forwards cubic-bezier(.2,.8,.2,1)}
+.card:nth-child(2){animation-delay:.25s}
+@keyframes in{to{opacity:1;transform:none}}
+.top{padding:14px 18px;display:flex;align-items:center;justify-content:space-between;font-weight:800;font-size:19px}
+.vf .top{background:var(--vf);color:#fff}
+.or .top{background:var(--or);color:#1a1000}
+.top small{font-weight:600;font-size:12px;opacity:.85}
+.body{padding:20px 18px 18px;text-align:center}
+.qr{position:relative;display:inline-block;background:#fff;padding:14px;border-radius:16px;line-height:0;box-shadow:0 8px 30px #0003}
+.qr canvas,.qr img{width:210px!important;height:210px!important;display:block}
+.qr:after{content:"";position:absolute;left:14px;right:14px;height:2px;top:14px;background:linear-gradient(90deg,transparent,currentColor,transparent);animation:scan 2.6s ease-in-out infinite}
+.vf .qr{color:var(--vf)}.or .qr{color:var(--or)}
+@keyframes scan{0%,100%{top:14px}50%{top:calc(100% - 16px)}}
+.lbl{color:var(--mute);font-size:13px;margin:14px 0 0}
+.num{font-size:28px;font-weight:800;letter-spacing:1.5px;direction:ltr;unicode-bidi:embed;margin:0 0 12px;font-variant-numeric:tabular-nums}
+.copy{font:inherit;font-weight:800;font-size:16px;width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;transition:.2s}
+.vf .copy:hover{background:var(--vf);border-color:var(--vf);color:#fff}
+.or .copy:hover{background:var(--or);border-color:var(--or);color:#1a1000}
+.copy.done{background:var(--ok)!important;border-color:var(--ok)!important;color:#04150e!important}
+.copy:focus-visible{outline:3px solid var(--or);outline-offset:2px}
+.pay{display:block;width:100%;margin-top:10px;font:inherit;font-weight:800;font-size:17px;padding:14px;border:0;border-radius:12px;cursor:pointer}
+.vf .pay{background:var(--vf);color:#fff}.or .pay{background:var(--or);color:#1a1000}
+.pay:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.hint{color:var(--mute);font-size:12.5px;margin:8px 0 0}
+.amt{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;margin-bottom:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.amt label{font-weight:600}
+.amt input{flex:1;min-width:140px;font:inherit;font-size:20px;font-weight:800;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);direction:ltr;text-align:center}
+.amt input:focus{outline:3px solid var(--or);outline-offset:1px}
+.err{color:var(--mute);font-size:14px;padding:80px 0;line-height:1.5}
+.foot{margin-top:26px;color:var(--mute);font-size:14px;text-align:center}
+.foot code{direction:ltr;unicode-bidi:embed;display:inline-block;color:var(--ink)}
+</style>
 </head>
-<body class="font-cairo bg-slate-50 text-slate-800 antialiased selection:bg-amber-400 selection:text-slate-900">
-
-    <!-- شريط الإشعارات العلوي -->
-    <div class="bg-amber-500 text-slate-950 text-xs sm:text-sm font-bold py-2 px-4 text-center">
-        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-2">
-            <i class="fa-solid fa-truck-fast"></i>
-            <span>شحن مجاني للطلبات فوق 2500 ج.م لجميع المحافظات | خصم 15% لفترة محدودة على العدد الكهربائية!</span>
-        </div>
-    </div>
-
-    <!-- الهيدر الرئيسي (Header) -->
-    <header class="sticky top-0 z-40 bg-slate-900 text-white shadow-lg border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20 gap-4">
-                
-                <!-- الشعار واسم المتجر -->
-                <a href="#" class="flex items-center gap-3 shrink-0 group">
-                    <div class="w-12 h-12 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center text-2xl shadow-md group-hover:bg-amber-400 transition-colors">
-                        <i class="fa-solid fa-screwdriver-wrench"></i>
-                    </div>
-                    <div>
-                        <h1 class="text-xl sm:text-2xl font-black tracking-tight text-white leading-none">الورشة</h1>
-                        <p class="text-[11px] sm:text-xs text-amber-400 font-semibold mt-1">للعدد والأدوات الصناعية</p>
-                    </div>
-                </a>
-
-                <!-- شريط البحث (للشاشات المتوسطة والكبيرة) -->
-                <div class="hidden md:flex flex-1 max-w-xl mx-6">
-                    <div class="relative w-full">
-                        <input 
-                            type="text" 
-                            id="searchInputDesktop"
-                            placeholder="ابحث عن شنيور، صاروخ، مفاتيح ربط، متر ليزر..." 
-                            class="w-full bg-slate-800 text-white placeholder-slate-400 border border-slate-700 rounded-xl py-2.5 pr-4 pl-12 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all text-sm"
-                        >
-                        <button onclick="handleSearch()" class="absolute left-2 top-1/2 -translate-y-1/2 bg-amber-500 hover:bg-amber-400 text-slate-950 w-8 h-8 rounded-lg flex items-center justify-center transition-colors">
-                            <i class="fa-solid fa-magnifying-glass text-sm"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- روابط سريعة وزر السلة -->
-                <div class="flex items-center gap-3 sm:gap-5">
-                    <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-slate-300">
-                        <a href="#products" class="hover:text-amber-400 transition-colors">المنتجات</a>
-                        <a href="#features" class="hover:text-amber-400 transition-colors">لماذا نحن؟</a>
-                        <a href="#footer" class="hover:text-amber-400 transition-colors">تواصل معنا</a>
-                    </nav>
-
-                    <!-- زر سلة التسوق -->
-                    <button 
-                        onclick="toggleCart(true)" 
-                        class="relative flex items-center gap-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white px-4 py-2.5 rounded-xl transition-all active:scale-95"
-                        aria-label="سلة التسوق"
-                    >
-                        <i class="fa-solid fa-cart-shopping text-amber-400 text-lg"></i>
-                        <span class="hidden sm:inline text-sm font-bold">السلة</span>
-                        <span id="cartBadge" class="bg-amber-500 text-slate-950 text-xs font-black w-6 h-6 rounded-full flex items-center justify-center shadow-sm">0</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- شريط البحث للموبايل -->
-            <div class="md:hidden pb-3">
-                <div class="relative w-full">
-                    <input 
-                        type="text" 
-                        id="searchInputMobile"
-                        placeholder="ابحث عن عدة أو أداة..." 
-                        class="w-full bg-slate-800 text-white placeholder-slate-400 border border-slate-700 rounded-xl py-2 pr-4 pl-10 focus:outline-none focus:border-amber-500 text-sm"
-                    >
-                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- القسم الترحيبي (Hero Section) -->
-    <section class="relative bg-slate-900 text-white overflow-hidden">
-        <!-- خلفية هندسية صناعية -->
-        <div class="absolute inset-0 opacity-10 pointer-events-none">
-            <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-amber-500 blur-3xl"></div>
-            <div class="absolute bottom-0 right-10 w-80 h-80 rounded-full bg-amber-400 blur-3xl"></div>
-        </div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-24 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-                
-                <!-- النصوص والأزرار -->
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-right">
-                    <div class="inline-flex items-center gap-2 bg-slate-800/90 border border-amber-500/30 text-amber-400 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold">
-                        <i class="fa-solid fa-bolt"></i>
-                        <span>عروض الموسم للمحترفين والورش والمنازل</span>
-                    </div>
-
-                    <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight text-white">
-                        قوة الأداء ودقة الإنجاز مع <span class="text-amber-400">أفضل العدد الصناعية</span>
-                    </h2>
-
-                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        نوفر لك تشكيلة متكاملة من العدد الكهربائية، اليدوية، أجهزة القياس الدقيقة، ومعدات الحماية من أشهر الماركات العالمية بضمان معتمد وأسعار تنافسية.
-                    </p>
-
-                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-                        <a href="#products" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold px-8 py-4 rounded-xl shadow-lg shadow-amber-500/20 flex items-center gap-3 transition-all hover:-translate-y-0.5 text-base sm:text-lg">
-                            <span>تصفح المنتجات</span>
-                            <i class="fa-solid fa-arrow-left"></i>
-                        </a>
-                        <a href="#features" class="bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-bold px-6 py-4 rounded-xl transition-all text-base">
-                            مميزات المتجر
-                        </a>
-                    </div>
-
-                    <!-- إحصائيات سريعة -->
-                    <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800 max-w-lg mx-auto lg:mx-0">
-                        <div>
-                            <div class="text-2xl sm:text-3xl font-black text-amber-400">+500</div>
-                            <div class="text-xs sm:text-sm text-slate-400">منتج ومعدة أصلية</div>
-                        </div>
-                        <div>
-                            <div class="text-2xl sm:text-3xl font-black text-amber-400">24 ساعة</div>
-                            <div class="text-xs sm:text-sm text-slate-400">توصيل سريع للمحافظات</div>
-                        </div>
-                        <div>
-                            <div class="text-2xl sm:text-3xl font-black text-amber-400">100%</div>
-                            <div class="text-xs sm:text-sm text-slate-400">ضمان حقيقي واستبدال</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- بطاقة العرض المميز البصرية -->
-                <div class="lg:col-span-5">
-                    <div class="relative bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 rounded-3xl p-6 sm:p-8 shadow-2xl">
-                        <div class="absolute -top-4 left-6 bg-red-600 text-white text-xs sm:text-sm font-black px-4 py-1.5 rounded-xl shadow-lg">
-                            خصم خاص 20%
-                        </div>
-                        
-                        <div class="aspect-[4/3] rounded-2xl bg-slate-950/60 border border-slate-700/70 flex flex-col items-center justify-center p-6 mb-6 relative overflow-hidden">
-                            <!-- رسم أيقوني احترافي لمجموعة عدد -->
-                            <div class="w-28 h-28 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400 text-6xl mb-3 shadow-inner">
-                                <i class="fa-solid fa-toolbox"></i>
-                            </div>
-                            <span class="text-xs text-slate-400 font-semibold">باقة الورشة المتكاملة للمحترفين</span>
-                        </div>
-
-                        <div class="space-y-3">
-                            <div class="flex items-center justify-between">
-                                <span class="text-xs font-bold text-amber-400 bg-amber-500/10 px-3 py-1 rounded-lg">الأكثر مبيعاً</span>
-                                <div class="flex items-center gap-1 text-amber-400 text-sm">
-                                    <i class="fa-solid fa-star"></i>
-                                    <span class="font-bold text-white">4.9</span>
-                                </div>
-                            </div>
-                            <h3 class="text-xl font-extrabold text-white">صندوق عدة متكامل 108 قطعة فولاذ كروم</h3>
-                            <p class="text-sm text-slate-400">شامل اللقم، المفاتيح، المفكات، والزراديات في حقيبة صلبة مقاومة للصدمات.</p>
-                            
-                            <div class="flex items-center justify-between pt-3 border-t border-slate-800">
-                                <div>
-                                    <span class="text-xs text-slate-400 line-through block">3,100 ج.م</span>
-                                    <span class="text-2xl font-black text-amber-400">2,480 ج.م</span>
-                                </div>
-                                <button onclick="addToCartById(5)" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-5 py-2.5 rounded-xl transition-all flex items-center gap-2 text-sm shadow-md">
-                                    <i class="fa-solid fa-cart-plus"></i>
-                                    <span>اطلبه الآن</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- قسم المنتجات والتصنيفات -->
-    <main id="products" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        
-        <!-- عنوان القسم وشريط الفلاتر -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
-            <div>
-                <span class="text-amber-600 font-bold text-sm tracking-wide">كتالوج المعدات</span>
-                <h2 class="text-2xl sm:text-4xl font-black text-slate-900 mt-1">تصفح أحدث العدد والأدوات</h2>
-            </div>
-
-            <!-- أزرار تصفية الأقسام -->
-            <div id="categoryFilters" class="flex flex-wrap items-center gap-2 sm:gap-3">
-                <button onclick="filterCategory('all')" data-cat="all" class="cat-btn active bg-slate-900 text-amber-400 font-bold px-4 py-2.5 rounded-xl text-sm shadow-sm transition-all">
-                    الكل
-                </button>
-                <button onclick="filterCategory('power')" data-cat="power" class="cat-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-bold px-4 py-2.5 rounded-xl text-sm transition-all">
-                    <i class="fa-solid fa-plug-circle-bolt ml-1 text-amber-500"></i> عدد كهربائية
-                </button>
-                <button onclick="filterCategory('hand')" data-cat="hand" class="cat-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-bold px-4 py-2.5 rounded-xl text-sm transition-all">
-                    <i class="fa-solid fa-wrench ml-1 text-amber-500"></i> عدد يدوية
-                </button>
-                <button onclick="filterCategory('measuring')" data-cat="measuring" class="cat-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-bold px-4 py-2.5 rounded-xl text-sm transition-all">
-                    <i class="fa-solid fa-ruler-combined ml-1 text-amber-500"></i> معدات قياس
-                </button>
-                <button onclick="filterCategory('safety')" data-cat="safety" class="cat-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-bold px-4 py-2.5 rounded-xl text-sm transition-all">
-                    <i class="fa-solid fa-helmet-safety ml-1 text-amber-500"></i> معدات السلامة
-                </button>
-            </div>
-        </div>
-
-        <!-- عداد النتائج المعروضة -->
-        <div class="flex items-center justify-between mb-6 text-sm text-slate-500">
-            <p>يتم عرض <span id="productsCount" class="font-bold text-slate-900">8</span> منتجات</p>
-            <button id="resetSearchBtn" onclick="resetFilters()" class="hidden text-amber-600 hover:text-amber-700 font-bold underline">
-                إعادة ضبط البحث والفلاتر
-            </button>
-        </div>
-
-        <!-- شبكة عرض المنتجات (Product Grid) -->
-        <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- يتم توليد البطاقات ديناميكياً عبر JavaScript -->
-        </div>
-
-        <!-- رسالة في حال عدم وجود نتائج -->
-        <div id="emptySearchState" class="hidden text-center py-16 bg-white rounded-3xl border border-slate-200 shadow-sm">
-            <div class="w-16 h-16 rounded-2xl bg-slate-100 text-slate-400 flex items-center justify-center text-3xl mx-auto mb-4">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-            <h3 class="text-xl font-bold text-slate-800">لم نجد منتجات مطابقة لبحثك</h3>
-            <p class="text-slate-500 text-sm mt-1 mb-5">جرب البحث بكلمات أخرى أو تصفح جميع الأقسام المتاحة.</p>
-            <button onclick="resetFilters()" class="bg-slate-900 text-amber-400 font-bold px-6 py-2.5 rounded-xl text-sm">
-                عرض كل المنتجات
-            </button>
-        </div>
-    </main>
-
-    <!-- قسم لماذا تختار متجرنا (Features Section) -->
-    <section id="features" class="bg-slate-900 text-white py-16 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <span class="text-amber-400 font-bold text-sm">ثقة الصنايعية والمهندسين</span>
-                <h2 class="text-2xl sm:text-4xl font-black mt-1">لماذا تتسوق من متجر الورشة؟</h2>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- ميزة 1 -->
-                <div class="bg-slate-800/70 border border-slate-700 rounded-2xl p-7 hover:border-amber-500/50 transition-all">
-                    <div class="w-14 h-14 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center text-2xl mb-5 shadow-md">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h3 class="text-xl font-extrabold mb-2">ضمان حقيقي ومعتمد</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed">
-                        جميع العدد الكهربائية وأجهزة القياس مشمولة بضمان الوكيل المعتمد ضد عيوب الصناعة مع إمكانية الاستبدال الفوري.
-                    </p>
-                </div>
-
-                <!-- ميزة 2 -->
-                <div class="bg-slate-800/70 border border-slate-700 rounded-2xl p-7 hover:border-amber-500/50 transition-all">
-                    <div class="w-14 h-14 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center text-2xl mb-5 shadow-md">
-                        <i class="fa-solid fa-truck-fast"></i>
-                    </div>
-                    <h3 class="text-xl font-extrabold mb-2">توصيل سريع لباب الورشة</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed">
-                        نغطي القاهرة والجيزة وجميع محافظات الجمهورية بشحن سريع وآمن مع إمكانية الدفع عند الاستلام بعد المعاينة.
-                    </p>
-                </div>
-
-                <!-- ميزة 3 -->
-                <div class="bg-slate-800/70 border border-slate-700 rounded-2xl p-7 hover:border-amber-500/50 transition-all">
-                    <div class="w-14 h-14 rounded-2xl bg-amber-500 text-slate-950 flex items-center justify-center text-2xl mb-5 shadow-md">
-                        <i class="fa-solid fa-gears"></i>
-                    </div>
-                    <h3 class="text-xl font-extrabold mb-2">قطع غيار أصلية وصيانة</h3>
-                    <p class="text-slate-300 text-sm leading-relaxed">
-                        نوفر كافة قطع الغيار الاستهلاكية مثل الشربون، الأسلحة، والبطاريات الأصلية لضمان استمرار معداتك بأعلى كفاءة.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- الفوتر (Footer) -->
-    <footer id="footer" class="bg-slate-950 text-slate-300 border-t border-slate-800 pt-14 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-10 border-b border-slate-800">
-                
-                <!-- عن المتجر -->
-                <div class="space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center text-xl">
-                            <i class="fa-solid fa-screwdriver-wrench"></i>
-                        </div>
-                        <span class="text-xl font-black text-white">الورشة للعدد والأدوات</span>
-                    </div>
-                    <p class="text-sm text-slate-400 leading-relaxed">
-                        وجهتك الأولى لتجهيز الورش والمصانع والمنازل بأقوى العدد الصناعية واليدوية وأدوات السلامة المهنية في مصر.
-                    </p>
-                </div>
-
-                <!-- الأقسام -->
-                <div>
-                    <h4 class="text-white font-bold text-base mb-4">أقسام المتجر</h4>
-                    <ul class="space-y-2.5 text-sm">
-                        <li><a href="#products" onclick="filterCategory('power')" class="hover:text-amber-400 transition-colors">العدد الكهربائية</a></li>
-                        <li><a href="#products" onclick="filterCategory('hand')" class="hover:text-amber-400 transition-colors">العدد اليدوية والمفاتيح</a></li>
-                        <li><a href="#products" onclick="filterCategory('measuring')" class="hover:text-amber-400 transition-colors">أجهزة القياس والليزر</a></li>
-                        <li><a href="#products" onclick="filterCategory('safety')" class="hover:text-amber-400 transition-colors">معدات الأمن والسلامة</a></li>
-                    </ul>
-                </div>
-
-                <!-- مواعيد العمل -->
-                <div>
-                    <h4 class="text-white font-bold text-base mb-4">مواعيد العمل</h4>
-                    <ul class="space-y-2.5 text-sm text-slate-400">
-                        <li class="flex items-center gap-2">
-                            <i class="fa-regular fa-clock text-amber-400"></i>
-                            <span>السبت - الخميس: 9:00 ص - 10:00 م</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fa-regular fa-clock text-amber-400"></i>
-                            <span>الجمعة: 2:00 م - 10:00 م</span>
-                        </li>
-                        <li class="flex items-center gap-2 text-emerald-400 font-semibold">
-                            <i class="fa-solid fa-headset"></i>
-                            <span>الطلب أونلاين متاح 24/7</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- بيانات التواصل والعنوان -->
-                <div>
-                    <h4 class="text-white font-bold text-base mb-4">تواصل معنا</h4>
-                    <ul class="space-y-3 text-sm text-slate-400">
-                        <li class="flex items-start gap-2.5">
-                            <i class="fa-solid fa-location-dot text-amber-400 mt-1"></i>
-                            <span>45 شارع الجمهورية، وسط البلد، القاهرة - جمهورية مصر العربية</span>
-                        </li>
-                        <li class="flex items-center gap-2.5">
-                            <i class="fa-solid fa-phone text-amber-400"></i>
-                            <span dir="ltr">0100 555 8920 / 02 2391 4400</span>
-                        </li>
-                        <li class="flex items-center gap-2.5">
-                            <i class="fa-solid fa-envelope text-amber-400"></i>
-                            <span>sales@alwarsha-tools.eg</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-                <p>© 2026 متجر الورشة للعدد والأدوات الصناعية. جميع الحقوق محفوظة.</p>
-                <div class="flex items-center gap-4 text-base text-slate-400">
-                    <a href="#" class="hover:text-amber-400 transition-colors" aria-label="فيسبوك"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#" class="hover:text-amber-400 transition-colors" aria-label="واتساب"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="#" class="hover:text-amber-400 transition-colors" aria-label="انستجرام"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- درج سلة التسوق الجانبي (Interactive Cart Drawer) -->
-    <div id="cartOverlay" onclick="toggleCart(false)" class="fixed inset-0 bg-slate-950/70 backdrop-blur-xs z-50 hidden transition-opacity"></div>
-    
-    <aside id="cartDrawer" class="fixed top-0 left-0 h-full w-full sm:w-[440px] bg-white z-50 shadow-2xl transform -translate-x-full transition-transform duration-300 flex flex-col">
-        <!-- رأس السلة -->
-        <div class="bg-slate-900 text-white px-6 py-5 flex items-center justify-between border-b border-slate-800">
-            <div class="flex items-center gap-3">
-                <i class="fa-solid fa-cart-shopping text-amber-400 text-xl"></i>
-                <h3 class="text-lg font-extrabold">سلة المشتريات</h3>
-                <span id="drawerItemCount" class="bg-amber-500 text-slate-950 text-xs font-black px-2.5 py-0.5 rounded-full">0</span>
-            </div>
-            <button onclick="toggleCart(false)" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors">
-                <i class="fa-solid fa-xmark text-lg"></i>
-            </button>
-        </div>
-
-        <!-- محتوى السلة القابل للتمرير -->
-        <div class="flex-1 overflow-y-auto p-6 space-y-6">
-            <!-- قائمة المنتجات في السلة -->
-            <div id="cartItemsList" class="space-y-4">
-                <!-- يتم حقن العناصر هنا -->
-            </div>
-
-            <!-- رسالة السلة الفارغة -->
-            <div id="emptyCartMessage" class="text-center py-12">
-                <div class="w-20 h-20 rounded-2xl bg-slate-100 text-slate-400 flex items-center justify-center text-4xl mx-auto mb-4">
-                    <i class="fa-solid fa-basket-shopping"></i>
-                </div>
-                <h4 class="text-lg font-bold text-slate-800">سلة التسوق فارغة حالياً</h4>
-                <p class="text-sm text-slate-500 mt-1 mb-6">أضف العدد والأدوات التي تحتاجها لبدء طلبك.</p>
-                <button onclick="toggleCart(false)" class="bg-slate-900 text-amber-400 font-bold px-6 py-2.5 rounded-xl text-sm">
-                    تصفح المنتجات
-                </button>
-            </div>
-
-            <!-- نموذج إتمام الطلب السريع -->
-            <form id="checkoutForm" onsubmit="submitOrder(event)" class="hidden bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-4">
-                <div class="flex items-center gap-2 text-slate-900 font-extrabold text-base border-b border-slate-200 pb-3">
-                    <i class="fa-solid fa-file-invoice text-amber-500"></i>
-                    <span>بيانات التوصيل السريع (الدفع عند الاستلام)</span>
-                </div>
-
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">الاسم بالكامل *</label>
-                    <input type="text" id="custName" required placeholder="مثال: أحمد محمود محمد" class="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-amber-500">
-                </div>
-
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">رقم الهاتف (واتساب / اتصال) *</label>
-                    <input type="tel" id="custPhone" required placeholder="010xxxxxxxx" class="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-amber-500 text-right" dir="ltr">
-                </div>
-
-                <div>
-                    <label class="block text-xs font-bold text-slate-700 mb-1">العنوان بالتفصيل والمحافظة *</label>
-                    <textarea id="custAddress" required rows="2" placeholder="المحافظة - المنطقة - اسم الشارع ورقم العقار" class="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-amber-500"></textarea>
-                </div>
-
-                <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-3.5 rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-base">
-                    <i class="fa-solid fa-circle-check"></i>
-                    <span>تأكيد الطلب الآن</span>
-                </button>
-            </form>
-        </div>
-
-        <!-- تذييل السلة بالإجمالي -->
-        <div id="cartFooter" class="hidden bg-slate-50 border-t border-slate-200 p-5 space-y-2">
-            <div class="flex items-center justify-between text-sm text-slate-600">
-                <span>مصاريف الشحن:</span>
-                <span id="shippingCost" class="font-bold text-slate-800">60 ج.م</span>
-            </div>
-            <div class="flex items-center justify-between text-lg font-black text-slate-900 pt-2 border-t border-slate-200">
-                <span>الإجمالي النهائي:</span>
-                <span id="cartTotalPrice" class="text-amber-600">0 ج.م</span>
-            </div>
-        </div>
-    </aside>
-
-    <!-- نافذة تأكيد الطلب ورسائل التنبيه (بدون استخدام alert) -->
-    <div id="toastNotification" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
-        <div class="bg-slate-900 text-white border-r-4 border-amber-500 px-5 py-3.5 rounded-xl shadow-2xl flex items-center gap-3">
-            <i class="fa-solid fa-circle-check text-amber-400 text-xl"></i>
-            <span id="toastMessage" class="text-sm font-bold">تمت إضافة المنتج للسلة</span>
-        </div>
-    </div>
-
-    <!-- مودال تأكيد نجاح الطلب -->
-    <div id="orderSuccessModal" class="fixed inset-0 bg-slate-950/75 backdrop-blur-xs z-50 hidden items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-md w-full p-7 text-center shadow-2xl border border-slate-100">
-            <div class="w-20 h-20 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-4xl mx-auto mb-5">
-                <i class="fa-solid fa-check"></i>
-            </div>
-            <h3 class="text-2xl font-black text-slate-900">تم استلام طلبك بنجاح!</h3>
-            <p id="orderSuccessDetails" class="text-slate-600 text-sm mt-2 leading-relaxed">
-                شكراً لتسوقك من متجر الورشة. سيتواصل معك فريق خدمة العملاء خلال ساعات لتأكيد موعد التسليم.
-            </p>
-            <div class="bg-slate-50 rounded-2xl p-4 my-5 border border-slate-200 text-xs text-slate-700 space-y-1">
-                <p>رقم الطلب المرجعي: <span id="orderRefNumber" class="font-black text-slate-900">#WR-8492</span></p>
-                <p>طريقة الدفع: <span class="font-bold">الدفع نقداً عند الاستلام</span></p>
-            </div>
-            <button onclick="closeSuccessModal()" class="w-full bg-slate-900 hover:bg-slate-800 text-amber-400 font-bold py-3 rounded-xl transition-colors">
-                متابعة التسوق
-            </button>
-        </div>
-    </div>
-
-    <script>
-        // قاعدة بيانات المنتجات الواقعية لمتجر العدد والأدوات
-        const products = [
-            {
-                id: 1,
-                name: "شنيور دقاق 850 وات بروفيشنال",
-                category: "power",
-                categoryLabel: "عدد كهربائية",
-                price: 1850,
-                oldPrice: 2150,
-                rating: 4.9,
-                reviews: 128,
-                inStock: true,
-                icon: "fa-gun",
-                badge: "الأكثر طلباً",
-                specs: "ظرف 13 مم معدن • سرعات متغيرة • دوران عكسي"
-            },
-            {
-                id: 2,
-                name: "طقم مفاتيح ربط بلدي ومشرشر 12 قطعة",
-                category: "hand",
-                categoryLabel: "عدد يدوية",
-                price: 780,
-                oldPrice: null,
-                rating: 4.8,
-                reviews: 94,
-                inStock: true,
-                icon: "fa-wrench",
-                badge: null,
-                specs: "مقاسات من 6 إلى 22 مم • فولاذ كروم فاناديوم"
-            },
-            {
-                id: 3,
-                name: "صاروخ جلخ وقطع 4.5 بوصة 900 وات",
-                category: "power",
-                categoryLabel: "عدد كهربائية",
-                price: 1420,
-                oldPrice: 1650,
-                rating: 4.7,
-                reviews: 82,
-                inStock: true,
-                icon: "fa-compact-disc",
-                badge: "خصم 14%",
-                specs: "11000 لفة/دقيقة • مقبض جانبي مريح • حماية من الغبار"
-            },
-            {
-                id: 4,
-                name: "متر قياس ليزر رقمي حتى 60 متر",
-                category: "measuring",
-                categoryLabel: "معدات قياس",
-                price: 1290,
-                oldPrice: 1500,
-                rating: 4.9,
-                reviews: 63,
-                inStock: true,
-                icon: "fa-ruler-horizontal",
-                badge: "دقة عالية",
-                specs: "حساب المساحة والحجم • شاشة مضيئة • ميزان مياه مدمج"
-            },
-            {
-                id: 5,
-                name: "صندوق عدة متكامل 108 قطعة فولاذ كروم",
-                category: "hand",
-                categoryLabel: "عدد يدوية",
-                price: 2480,
-                oldPrice: 3100,
-                rating: 5.0,
-                reviews: 210,
-                inStock: true,
-                icon: "fa-toolbox",
-                badge: "عرض خاص",
-                specs: "يد عزم 1/2 و 1/4 بوصة • لقم ومفكات متكاملة"
-            },
-            {
-                id: 6,
-                name: "طقم خوذة مهندسين ونظارة حماية صناعية",
-                category: "safety",
-                categoryLabel: "معدات السلامة",
-                price: 340,
-                oldPrice: null,
-                rating: 4.6,
-                reviews: 47,
-                inStock: true,
-                icon: "fa-helmet-safety",
-                badge: null,
-                specs: "مقاومة للصدمات العالية • عدسات مضادة للخدش والشرر"
-            },
-            {
-                id: 7,
-                name: "مفتاح إنجليزي قابل للضبط 12 بوصة",
-                category: "hand",
-                categoryLabel: "عدد يدوية",
-                price: 390,
-                oldPrice: 450,
-                rating: 4.8,
-                reviews: 76,
-                inStock: true,
-                icon: "fa-screwdriver-wrench",
-                badge: null,
-                specs: "مقبض مطاطي مانع للانزلاق • فك مقوى بالمعالجة الحرارية"
-            },
-            {
-                id: 8,
-                name: "منشار أركت كهربائي 650 وات مع 5 أسلحة",
-                category: "power",
-                categoryLabel: "عدد كهربائية",
-                price: 1590,
-                oldPrice: null,
-                rating: 4.7,
-                reviews: 55,
-                inStock: false,
-                icon: "fa-bolt",
-                badge: "ينفد سريعاً",
-                specs: "قص الخشب والمعادن • زاوية ميل حتى 45 درجة"
-            }
-        ];
-
-        // حالة التطبيق
-        let currentCategory = 'all';
-        let searchQuery = '';
-        let cart = [];
-
-        // تنسيق العملة بالجنيه المصري
-        function formatPrice(amount) {
-            return amount.toLocaleString('ar-EG') + ' ج.م';
-        }
-
-        // عرض المنتجات في الشبكة
-        function renderProducts() {
-            const grid = document.getElementById('productsGrid');
-            const emptyState = document.getElementById('emptySearchState');
-            const countSpan = document.getElementById('productsCount');
-            const resetBtn = document.getElementById('resetSearchBtn');
-
-            const filtered = products.filter(item => {
-                const matchesCat = currentCategory === 'all' || item.category === currentCategory;
-                const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                                      item.specs.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                                      item.categoryLabel.includes(searchQuery);
-                return matchesCat && matchesSearch;
-            });
-
-            countSpan.textContent = filtered.length;
-
-            if (currentCategory !== 'all' || searchQuery.trim() !== '') {
-                resetBtn.classList.remove('hidden');
-            } else {
-                resetBtn.classList.add('hidden');
-            }
-
-            if (filtered.length === 0) {
-                grid.innerHTML = '';
-                emptyState.classList.remove('hidden');
-                return;
-            }
-
-            emptyState.classList.add('hidden');
-
-            grid.innerHTML = filtered.map(product => `
-                <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:shadow-xl hover:border-amber-400 transition-all duration-300 flex flex-col justify-between group">
-                    <div>
-                        <!-- منطقة صورة / أيقونة المنتج -->
-                        <div class="relative h-48 bg-slate-100 flex items-center justify-center p-6 overflow-hidden border-b border-slate-100">
-                            ${product.badge ? `
-                                <span class="absolute top-3 right-3 bg-slate-900 text-amber-400 text-[11px] font-extrabold px-3 py-1 rounded-lg shadow-xs z-10">
-                                    ${product.badge}
-                                </span>
-                            ` : ''}
-                            
-                            <span class="absolute top-3 left-3 text-[11px] font-bold px-2.5 py-1 rounded-lg ${product.inStock ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'}">
-                                ${product.inStock ? 'متوفر بالمخزن' : 'غير متوفر حالياً'}
-                            </span>
-
-                            <div class="w-24 h-24 rounded-2xl bg-white border border-slate-200 shadow-sm flex items-center justify-center text-4xl text-slate-800 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all duration-300">
-                                <i class="fa-solid ${product.icon}"></i>
-                            </div>
-                        </div>
-
-                        <!-- تفاصيل المنتج -->
-                        <div class="p-5">
-                            <div class="flex items-center justify-between text-xs text-slate-500 mb-2">
-                                <span class="font-bold text-amber-600">${product.categoryLabel}</span>
-                                <div class="flex items-center gap-1">
-                                    <i class="fa-solid fa-star text-amber-400"></i>
-                                    <span class="font-bold text-slate-800">${product.rating}</span>
-                                    <span>(${product.reviews})</span>
-                                </div>
-                            </div>
-
-                            <h3 class="text-base font-extrabold text-slate-900 leading-snug mb-2 group-hover:text-amber-600 transition-colors">
-                                ${product.name}
-                            </h3>
-
-                            <p class="text-xs text-slate-500 leading-relaxed">
-                                ${product.specs}
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- السعر وزر الإضافة للسلة -->
-                    <div class="px-5 pb-5 pt-3 border-t border-slate-100 flex items-center justify-between gap-2">
-                        <div>
-                            ${product.oldPrice ? `<span class="text-xs text-slate-400 line-through block">${formatPrice(product.oldPrice)}</span>` : ''}
-                            <span class="text-lg font-black text-slate-900">${formatPrice(product.price)}</span>
-                        </div>
-
-                        <button 
-                            onclick="addToCartById(${product.id})"
-                            ${!product.inStock ? 'disabled' : ''}
-                            class="px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm flex items-center gap-2 transition-all ${
-                                product.inStock 
-                                ? 'bg-slate-900 hover:bg-amber-500 text-white hover:text-slate-950 shadow-sm active:scale-95' 
-                                : 'bg-slate-200 text-slate-400 cursor-not-allowed'
-                            }"
-                        >
-                            <i class="fa-solid fa-cart-plus"></i>
-                            <span>${product.inStock ? 'أضف للسلة' : 'نفدت الكمية'}</span>
-                        </button>
-                    </div>
-                </article>
-            `).join('');
-        }
-
-        // تصفية حسب القسم
-        function filterCategory(category) {
-            currentCategory = category;
-            
-            document.querySelectorAll('.cat-btn').forEach(btn => {
-                if (btn.dataset.cat === category) {
-                    btn.className = 'cat-btn active bg-slate-900 text-amber-400 font-bold px-4 py-2.5 rounded-xl text-sm shadow-sm transition-all';
-                } else {
-                    btn.className = 'cat-btn bg-white hover:bg-slate-100 text-slate-700 border border-slate-200 font-bold px-4 py-2.5 rounded-xl text-sm transition-all';
-                }
-            });
-
-            renderProducts();
-        }
-
-        // البحث الفوري
-        function handleSearch() {
-            const desktopVal = document.getElementById('searchInputDesktop').value;
-            const mobileVal = document.getElementById('searchInputMobile').value;
-            searchQuery = desktopVal || mobileVal;
-            renderProducts();
-        }
-
-        document.getElementById('searchInputDesktop').addEventListener('input', (e) => {
-            document.getElementById('searchInputMobile').value = e.target.value;
-            searchQuery = e.target.value;
-            renderProducts();
-        });
-
-        document.getElementById('searchInputMobile').addEventListener('input', (e) => {
-            document.getElementById('searchInputDesktop').value = e.target.value;
-            searchQuery = e.target.value;
-            renderProducts();
-        });
-
-        function resetFilters() {
-            currentCategory = 'all';
-            searchQuery = '';
-            document.getElementById('searchInputDesktop').value = '';
-            document.getElementById('searchInputMobile').value = '';
-            filterCategory('all');
-        }
-
-        // إضافة منتج للسلة
-        function addToCartById(productId) {
-            const product = products.find(p => p.id === productId);
-            if (!product || !product.inStock) return;
-
-            const existing = cart.find(item => item.id === productId);
-            if (existing) {
-                existing.qty += 1;
-            } else {
-                cart.push({ ...product, qty: 1 });
-            }
-
-            updateCartUI();
-            showToast(`تمت إضافة "${product.name}" إلى السلة`);
-        }
-
-        // تعديل الكمية في السلة
-        function updateQuantity(productId, delta) {
-            const index = cart.findIndex(item => item.id === productId);
-            if (index === -1) return;
-
-            cart[index].qty += delta;
-            if (cart[index].qty <= 0) {
-                cart.splice(index, 1);
-            }
-            updateCartUI();
-        }
-
-        // حذف عنصر من السلة
-        function removeFromCart(productId) {
-            cart = cart.filter(item => item.id !== productId);
-            updateCartUI();
-        }
-
-        // تحديث واجهة السلة والعدادات
-        function updateCartUI() {
-            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
-            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-            const shipping = subtotal >= 2500 || subtotal === 0 ? 0 : 60;
-            const finalTotal = subtotal + shipping;
-
-            document.getElementById('cartBadge').textContent = totalItems;
-            document.getElementById('drawerItemCount').textContent = totalItems;
-
-            const itemsList = document.getElementById('cartItemsList');
-            const emptyMsg = document.getElementById('emptyCartMessage');
-            const checkoutForm = document.getElementById('checkoutForm');
-            const cartFooter = document.getElementById('cartFooter');
-
-            if (cart.length === 0) {
-                itemsList.innerHTML = '';
-                emptyMsg.classList.remove('hidden');
-                checkoutForm.classList.add('hidden');
-                cartFooter.classList.add('hidden');
-                return;
-            }
-
-            emptyMsg.classList.add('hidden');
-            checkoutForm.classList.remove('hidden');
-            cartFooter.classList.remove('hidden');
-
-            itemsList.innerHTML = cart.map(item => `
-                <div class="flex items-center gap-3.5 bg-white border border-slate-200 p-3.5 rounded-2xl shadow-2xs">
-                    <div class="w-14 h-14 rounded-xl bg-slate-100 text-slate-800 flex items-center justify-center text-xl shrink-0">
-                        <i class="fa-solid ${item.icon}"></i>
-                    </div>
-                    <div class="flex-1 min-w-0">
-                        <h4 class="text-sm font-bold text-slate-900 truncate">${item.name}</h4>
-                        <p class="text-xs font-extrabold text-amber-600 mt-0.5">${formatPrice(item.price)}</p>
-                        
-                        <div class="flex items-center gap-2 mt-2">
-                            <button onclick="updateQuantity(${item.id}, -1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold flex items-center justify-center">-</button>
-                            <span class="text-xs font-black w-6 text-center">${item.qty}</span>
-                            <button onclick="updateQuantity(${item.id}, 1)" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold flex items-center justify-center">+</button>
-                        </div>
-                    </div>
-                    <button onclick="removeFromCart(${item.id})" class="text-slate-400 hover:text-rose-600 p-2 transition-colors" title="حذف">
-                        <i class="fa-solid fa-trash-can"></i>
-                    </button>
-                </div>
-            `).join('');
-
-            document.getElementById('shippingCost').textContent = shipping === 0 ? 'مجاني 🎉' : formatPrice(shipping);
-            document.getElementById('cartTotalPrice').textContent = formatPrice(finalTotal);
-        }
-
-        // فتح وإغلاق درج السلة
-        function toggleCart(open) {
-            const overlay = document.getElementById('cartOverlay');
-            const drawer = document.getElementById('cartDrawer');
-
-            if (open) {
-                overlay.classList.remove('hidden');
-                drawer.classList.remove('-translate-x-full');
-                document.body.style.overflow = 'hidden';
-            } else {
-                overlay.classList.add('hidden');
-                drawer.classList.add('-translate-x-full');
-                document.body.style.overflow = '';
-            }
-        }
-
-        // إشعار Toast سريع
-        let toastTimeout;
-        function showToast(message) {
-            const toast = document.getElementById('toastNotification');
-            document.getElementById('toastMessage').textContent = message;
-            
-            toast.classList.remove('translate-y-24', 'opacity-0');
-            clearTimeout(toastTimeout);
-            
-            toastTimeout = setTimeout(() => {
-                toast.classList.add('translate-y-24', 'opacity-0');
-            }, 2800);
-        }
-
-        // إرسال الطلب السريع
-        function submitOrder(e) {
-            e.preventDefault();
-            const name = document.getElementById('custName').value.trim();
-            const phone = document.getElementById('custPhone').value.trim();
-            const address = document.getElementById('custAddress').value.trim();
-
-            if (!name || !phone || !address) return;
-
-            const randomRef = '#WR-' + Math.floor(1000 + Math.random() * 9000);
-            document.getElementById('orderRefNumber').textContent = randomRef;
-            document.getElementById('orderSuccessDetails').textContent = 
-                `أهلاً بك يا ${name}، تم تسجيل طلبك بنجاح وسيتم التوصيل إلى (${address}) والتواصل معك على رقم ${phone}.`;
-
-            // تفريغ السلة وإغلاق الدرج وفتح مودال النجاح
-            cart = [];
-            updateCartUI();
-            document.getElementById('checkoutForm').reset();
-            toggleCart(false);
-
-            const modal = document.getElementById('orderSuccessModal');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-        }
-
-        function closeSuccessModal() {
-            const modal = document.getElementById('orderSuccessModal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
-
-        // التهيئة الأولية عند تحميل الصفحة
-        window.addEventListener('DOMContentLoaded', () => {
-            renderProducts();
-            updateCartUI();
-        });
-    </script>
+<body>
+<main class="wrap">
+  <span class="tag"><i></i> جاهز للاستلام</span>
+  <h1>ادفع لـ <span>محل أبو عبد الرحمن</span></h1>
+  <p class="sub">امسح الكود بتطبيق المحفظة أو انسخ الرقم وحوّل مباشرة.</p>
+
+  <div class="amt"><label for="amt">المبلغ المراد تحويله (جنيه)</label><input id="amt" type="number" inputmode="decimal" min="1" placeholder="اختياري"></div>
+
+  <section class="grid">
+    <article class="card vf">
+      <div class="top"><span>فودافون كاش</span><small>Vodafone Cash</small></div>
+      <div class="body">
+        <div class="qr" id="qrVf"></div>
+        <p class="lbl">رقم المحفظة</p>
+        <p class="num">01282102022</p>
+        <button class="copy" data-n="01282102022">نسخ الرقم</button>
+        <button class="pay" id="payVf">حوّل الآن من فودافون كاش</button>
+        <p class="hint">يفتح الاتصال بالكود جاهزًا، ويبقى الرقم السري فقط.</p>
+      </div>
+    </article>
+
+    <article class="card or">
+      <div class="top"><span>أورنج كاش</span><small>Orange Cash</small></div>
+      <div class="body">
+        <div class="qr" id="qrOr"></div>
+        <p class="lbl">رقم المحفظة</p>
+        <p class="num">01282102022</p>
+        <button class="copy" data-n="01282102022">نسخ الرقم</button>
+        <button class="pay" id="payOr">حوّل الآن من أورنج كاش</button>
+        <p class="hint">يفتح قائمة أورنج كاش، اختر «تحويل الأموال» والصق الرقم (تم نسخه تلقائيًا).</p>
+      </div>
+    </article>
+  </section>
+
+  <p class="foot">للتواصل: <a href="tel:01282102022" style="color:inherit"><code>01282102022</code></a></p>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+(function(){
+  var NUMBER="01282102022";
+  function make(id){
+    var el=document.getElementById(id);
+    try{
+      new QRCode(el,{text:NUMBER,width:420,height:420,colorDark:"#000000",colorLight:"#ffffff",correctLevel:QRCode.CorrectLevel.H});
+    }catch(e){
+      el.style.cssText="background:none;box-shadow:none;padding:0";
+      el.innerHTML='<div class="err">تعذّر تحميل الكود.<br>استخدم الرقم بالأسفل.</div>';
+    }
+  }
+  make("qrVf");make("qrOr");
+
+  function copyNum(){
+    try{if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(NUMBER)}}catch(e){}
+  }
+  function dial(code){window.location.href="tel:"+encodeURIComponent(code)}
+  document.getElementById("payVf").addEventListener("click",function(){
+    var a=Math.floor(parseFloat(document.getElementById("amt").value));
+    copyNum();
+    if(a>0){dial("*9*7*"+NUMBER+"*"+a+"#")}else{dial("*9#")}
+  });
+  document.getElementById("payOr").addEventListener("click",function(){
+    copyNum();dial("#115#");
+  });
+
+  document.querySelectorAll(".copy").forEach(function(b){
+    b.addEventListener("click",function(){
+      function ok(){b.textContent="تم النسخ ✓";b.classList.add("done");setTimeout(function(){b.textContent="نسخ الرقم";b.classList.remove("done")},1800)}
+      try{
+        if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(b.dataset.n).then(ok,fallback)}else{fallback()}
+      }catch(e){fallback()}
+      function fallback(){
+        var t=document.createElement("textarea");t.value=b.dataset.n;document.body.appendChild(t);t.select();
+        try{document.execCommand("copy");ok()}catch(e){}
+        document.body.removeChild(t);
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
+
